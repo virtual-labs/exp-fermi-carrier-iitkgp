@@ -1,13 +1,407 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en"><!--html tag start-->
+<head>
+    <title>Variation of Fermi Energy Level and Carrier Concentration with Temperature</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/adik.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+  
+	
+ <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js  "></script>
+ <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+
+
+<link rel="stylesheet" type="text/js" href="./ncjs/jquery.flot.min.js">
+<link rel="stylesheet" type="text/js" href="./ncjs/jjquery.js">
+<link rel="stylesheet" type="text/js" href="./ncjs/MathJax.js">
+
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<style data-merge-styles="true"></style><style data-merge-styles="true"></style><script language="javascript" type="text/javascript" src="./ncjs/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
+
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="./js/MathJax.js"></script>
+
+
+<style data-merge-styles="true"></style><style data-merge-styles="true"></style><script language="javascript" type="text/javascript" src="./ncjs/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./js/jquery.flot.js"></script>
+<script language="JavaScript">
+
+var d1 = [];
+var d2 = [];
+var d3 = [];
+var d4 = [];
+var d5 = [];
+var d6 = [];
+var d7 = [];
+var d8 = [];
+var d9 = [];
+var d10 = [];
+var d11 = [];
+var kB = 1.380658E-23;
+var ec = 1.60217733E-19;
+
+function plot() {
+  d1.length=0; d2.length=0;d3.length=0;d4.length=0;d5.length=0; d6.length=0;
+  d7.length=0; d8.length=0; d9.length=0; d10.length=0; d11.length=0; 
+  Nc=eval(data.Nc.value);
+  Nv=eval(data.Nv.value);
+  Nd=eval(data.Nd.value);
+  Na=eval(data.Na.value);
+  Ed0=eval(data.Ed.value);
+  Ea=eval(data.Ea.value);
+  Egstr=data.Eg.value;
+  T1=eval(data.T1.value);
+  T2=eval(data.T2.value);
+
+for (j=0; j<201; j++) {
+ T=T1 + j*(T2-T1)/200;
+ Tstr="("+T+")";
+ Eg = eval(Egstr.replace(/T/gi, Tstr));
+ Ed = Eg - Ed0;
+
+if (Na > Nd) {
+
+ for (i=0; i<500; i++) {
+  Ef = i*Eg/500;
+  n=Nc*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(Ef-Eg)/(1.38E-23*T));
+  p=Nv*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(-Ef)/(1.38E-23*T));
+  Namin = Na/(1+4*Math.exp(1.6022E-19*(Ea-Ef)/(1.38E-23*T)));
+  Ndplus = Nd/(1+2*Math.exp(1.6022E-19*(Ef-Ed)/(1.38E-23*T)));
+  logn = Math.log(Namin +n);
+  logp = Math.log(Ndplus +p);
+  if (logn > logp) { 
+    Ef = Ef-Eg/500 + (Eg/500)*(logp0-logn0)/((logn-logn0)-(logp-logp0));   
+    break; 
+  }
+  else {
+    logn0 = logn;
+    logp0 = logp;
+  }
+ }    
+  n=Nc*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(Ef-Eg)/(1.38E-23*T));
+  p=Nv*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(-Ef)/(1.38E-23*T)); 
+  d1[j] = [T,Eg/2];
+  d2[j] = [T,Ed-Eg/2];
+  d3[j] = [T,Ef-Eg/2];
+  d4[j] = [T,Ea-Eg/2];
+  d5[j] = [T,-Eg/2];
+  d6[j] = [T,Math.log(n)/2.30258509299];
+  d7[j] = [T,Math.log(p)/2.30258509299];
+  d8[j] = [1/T,d6[j][1]];
+  d9[j] = [1/T,d7[j][1]];
+  d10[j] = [T,Math.log(Math.sqrt(Nc*Nv*Math.pow(T/300,3))*Math.exp(1.6022E-19*(-Eg)/(2*1.38E-23*T)))/2.30258509299];
+  d11[j] = [1/T,Math.log(Math.sqrt(Nc*Nv*Math.pow(T/300,3))*Math.exp(1.6022E-19*(-Eg)/(2*1.38E-23*T)))/2.30258509299];
+}
+
+else {
+
+ for (i=500; i>0; i--) {
+  Ef = i*Eg/500;
+  n=Nc*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(Ef-Eg)/(1.38E-23*T));
+  p=Nv*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(-Ef)/(1.38E-23*T));
+  Namin = Na/(1+4*Math.exp(1.6022E-19*(Ea-Ef)/(1.38E-23*T)));
+  Ndplus = Nd/(1+2*Math.exp(1.6022E-19*(Ef-Ed)/(1.38E-23*T)));
+  logn = Math.log(Namin +n);
+  logp = Math.log(Ndplus +p);
+  if (logp > logn) { 
+    Ef = Ef + (Eg/500)*(logp-logn)/((logn0-logn)-(logp0-logp));   
+    break; 
+  }
+  else {
+    logn0 = logn;
+    logp0 = logp;
+  }
+ }         
+
+  n=Nc*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(Ef-Eg)/(1.38E-23*T));
+  p=Nv*Math.pow(T/300,1.5)*Math.exp(1.6022E-19*(-Ef)/(1.38E-23*T));
+  d1[j] = [T,Eg/2];
+  d2[j] = [T,Ed-Eg/2];
+  d3[j] = [T,Ef-Eg/2];
+  d4[j] = [T,Ea-Eg/2];
+  d5[j] = [T,-Eg/2];
+  d6[j] = [T,Math.log(n)/2.30258509299];
+  d7[j] = [T,Math.log(p)/2.30258509299];
+  d8[j] = [1/T,d6[j][1]];
+  d9[j] = [1/T,d7[j][1]];
+  d10[j] = [T,Math.log(Math.sqrt(Nc*Nv*Math.pow(T/300,3))*Math.exp(1.6022E-19*(-Eg)/(2*1.38E-23*T)))/2.30258509299];
+  d11[j] = [1/T,Math.log(Math.sqrt(Nc*Nv*Math.pow(T/300,3))*Math.exp(1.6022E-19*(-Eg)/(2*1.38E-23*T)))/2.30258509299];
+}
+  if (ec*(Eg-Ef)<3*kB*T) {alert("The Boltzmann approximation is not valid for temperatures above "+T+" K"); break;}
+  if (ec*Ef<3*kB*T) {alert("The Boltzmann approximation is not valid for temperatures above "+T+" K"); break;}
+
+}
+
+    var data1 = [{ data: d1, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "Ec" },{ data: d2, color: "rgb(255, 200, 200)", shadowSize:0, lines: {show:true}, label: "Ed"},{ data: d3, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "Ef"},{ data: d4, color: "rgb(200, 200, 255)", shadowSize:0, lines: {show:true}, label: "Ea"},{ data: d5, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "Ev"}];
+
+    $.plot($("#placeholder"), data1);
+
+    var data2 = [{ data: d6, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d7, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d10, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
+
+    $.plot($("#placeholder2"), data2, { yaxis:{ min:8, max: 18}});
+
+    var data3 = [{ data: d8, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d9, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d11, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
+
+    $.plot($("#placeholder3"), data3, { yaxis:{ min:8, max: 18}});
+
+}
+</script>
+<style>
+ p {margin-left:1cm;}
+</style>
+
+<style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+</style>
+  
+  
+</head>
+<body><div id="MathJax_Message" style="display: none;"></div><!--body tag start-->
+
+    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+        <div class="row"><!--First row under 1st container start-->
+            <div class="col-md-3"><!--First col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div><!--First col under 1st row end-->
+            <div class="col-md-6"><!--2nd col under 1st row start-->
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div><!--2nd col under 1st row end-->
+            <div class="col-md-3"><!--3rd col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div><!--3rd col under 1st row end-->
+        </div><!--First row under 1st container end-->
+    
+        <hr>
+        <div class="row"><!--2nd row under 1st container start-->
+            <div class="col-md-3"><!--First col under 2nd row start-->
+
+            </div><!--First col under 2nd row end-->
+            <div class="col-md-6"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>Variation of Fermi Energy Level and Carrier Concentration with Temperature</b> </p>
+            </div><!--2nd col under 2nd row end-->
+            <div class="col-md-3"><!--3rd col under 2nd row start-->
+
+            </div><!--3rd col under 2nd row end-->
+        </div><!--2nd row under 1st container end-->
+        <hr>
+        <div class="d-flex p-1 text-primary"><!--3rd row under 1st container start-->
+          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Microelectronics and VLSI Engineering Laboratory </b></span> --> </a></p></div>
+          <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> Variation of Fermi Energy Level and Carrier Concentration with Temperature</b> </span> </a></p></div>
+        </div><!--3rd row under 1st container end-->
+    </div><!--First Container under body tag end-->
+    
+    <div class="container p-3 my-5 text-primary text-center border"><!--2nd Container under body tag start-->
+        <div class="row"><!--First row under 2nd container start-->
+
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Introduction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../aim.html">Objective</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../prequiz.html">Pre Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../theory.html">Theory</a>
+                </li>
+				<li class="nav-item">
+                  <a class="nav-link" href="../procedure.html">Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Simulation</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../postquiz.html">Post Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../feedback.html">Feedback</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../references.html">References</a>
+                  </li>
+
+              </ul>
+        </div><!--First row under 2nd container end-->
+    </div><!--2nd Container under body tag end-->
+	
+    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+      <div class="row"><!--First row under 3rd container start-->
+        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+        <div class="col-md-10"><!--2nd col under 3rd container start-->
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+					<ol>
+					
+			<!-- Instructions -->
+			
+			 <div class="container">
+        
+        
+        <div class="steps">
+         
+		 
+    <p>This simulation allows you to analyze the temperature dependence of carrier concentration and energy levels in a semiconductor. Follow the steps below to use the tool effectively:</p>
+
+    <h4 class="section-title"> Choose Semiconductor Material</h4>
+    <p>Select the type of semiconductor material (Si, Ge, or GaAs) by clicking the corresponding button under the "Semiconductor" section.</p>
+
+    <h4 class="section-title"> Input Semiconductor Parameters</h4>
+    <p>Fill in the required parameters in the provided fields:</p>
+    <ul>
+        <li><strong>N<sub>C</sub>(300 K) and N<sub>V</sub>(300 K):</strong> Enter the effective density of states for the conduction band (N<sub>C</sub>) and the valence band (N<sub>V</sub>) at 300 K in units of 1/cm<sup>3</sup>.</li>
+        <li><strong>E<sub>g</sub>:</strong> Enter the energy band gap (E<sub>g</sub>) as a function of temperature. This is usually given as a temperature-dependent equation.</li>
+        <li><strong>N<sub>d</sub>:</strong> Specify the donor concentration (N<sub>d</sub>) in units of 1/cm<sup>3</sup>.</li>
+        <li><strong>E<sub>C</sub> - E<sub>d</sub>:</strong> Input the energy difference between the conduction band edge (E<sub>C</sub>) and donor level (E<sub>d</sub>) in eV.</li>
+        <li><strong>N<sub>a</sub>:</strong> Specify the acceptor concentration (N<sub>a</sub>) in units of 1/cm<sup>3</sup>.</li>
+        <li><strong>E<sub>a</sub> - E<sub>V</sub>:</strong> Enter the energy difference between the acceptor level (E<sub>a</sub>) and the valence band edge (E<sub>V</sub>) in eV.</li>
+    </ul>
+
+    <h4 class="section-title"> Select Donor and Acceptor Doping</h4>
+    <p>Choose the type of donor and acceptor impurities for the semiconductor by clicking the respective buttons.</p>
+
+    <h4 class="section-title"> Set Temperature Range</h4>
+    <p>Specify the minimum (T<sub>1</sub>) and maximum (T<sub>2</sub>) temperatures in Kelvin (K) for the simulation.</p>
+
+    <h4 class="section-title"> Run Simulation</h4>
+    <p>Once all parameters are set, click the "Replot" button to generate the plots.</p>
+
+    <h4 class="section-title"> Interpreting the Plots</h4>
+    <ul>
+        <li><strong>Top Left Plot (Energy Levels vs Temperature):</strong> This plot shows the variation of energy levels (conduction band E<sub>C</sub>, donor level E<sub>d</sub>, Fermi level E<sub>f</sub>, acceptor level E<sub>a</sub>, and valence band E<sub>V</sub>) as a function of temperature.</li>
+        <li><strong>Bottom Left Plot (Carrier Concentrations vs Temperature):</strong> This plot displays the logarithm (base 10) of carrier concentrations n (electron concentration), p (hole concentration), and n<sub>i</sub> (intrinsic carrier concentration) as a function of temperature.</li>
+        <li><strong>Bottom Right Plot (Carrier Concentrations vs 1/Temperature):</strong> This plot shows the logarithm (base 10) of carrier concentrations as a function of 1/T, which is useful for understanding the temperature dependence of carrier concentrations.</li>
+    </ul>
+
+    <h4 class="section-title"> Adjust Parameters and Replot</h4>
+    <p>You can adjust any of the input parameters and click "Replot" to see how the changes affect the results.</p>
+
+    <p>This simulation helps in understanding the behavior of semiconductors under different doping conditions and temperature ranges.</p>
+
+
+    
+   
+
+        </div>
+    </div>
+			
+			
+<!-- end instruction   -->
+					<br><br>
+					</ol>
+	
+					
+					
+		   </div>
+            </p> 
+          </div><!--2nd col under 3rd container end-->
+		  
+        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+      </div><!--First row under 3rd container end-->
+    </div><!--3rd Container under body tag end-->
+	
+   <!--simulation start -->
+ <div class="container">
+        
+        
+     
+
+<table align="center">
+
+<tbody>
+
+<tr><td>
+<table><tbody><tr><td><i>E<sub>F</sub></i>&nbsp;[eV]</td><td><div id="placeholder" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 80px; text-align: center;">200</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 154px; text-align: center;">400</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 228px; text-align: center;">600</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 302px; text-align: center;">800</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 373px; text-align: center;">1000</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 2px; text-align: right;">-0.75</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 224px; left: 2px; text-align: right;">-0.50</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 179px; left: 2px; text-align: right;">-0.25</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 7px; text-align: right;">0.00</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 90px; left: 7px; text-align: right;">0.25</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 45px; left: 7px; text-align: right;">0.50</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 7px; text-align: right;">0.75</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="legend"><div style="position: absolute; width: 43px; height: 102px; top: 13px; right: 19px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">Ec</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255, 200, 200);overflow:hidden"></div></div></td><td class="legendLabel">Ed</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">Ef</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(200, 200, 255);overflow:hidden"></div></div></td><td class="legendLabel">Ea</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 255);overflow:hidden"></div></div></td><td class="legendLabel">Ev</td></tr></tbody></table></div></div></td></tr>
+<tr><td></td><td><p style="text-align:center"><i>T</i> [K]</p></td></tr></tbody></table>
+</td><td>
+<form name="data">
+<table style="border-collapse:collapse">
+<tbody><tr><td style="background-color:cccccc"><p style="text-align:right">&#8195;<i>N<sub>c</sub></i>(300 K) = </p></td><td style="background-color:cccccc"><input type="text" name="Nc" value="2.78E19"></td><td style="background-color:cccccc">1/cm³&#8195;</td><td rowspan="3">&nbsp;Semiconductor<br><input type="button" value="Si" onclick="data.Nc.value=&#39;2.78E19&#39;; data.Nv.value=&#39;9.84E18&#39;; data.Eg.value=&#39;1.166-4.73E-4*T*T/(T+636)&#39;; plot();"><input type="button" value="Ge" onclick="data.Nc.value=&#39;1.04E19&#39;; data.Nv.value=&#39;6.0E18&#39;; data.Eg.value=&#39;0.7437-4.77E-4*T*T/(T+235)&#39;; plot();"><input type="button" value="GaAs" onclick="data.Nc.value=&#39;4.45E17&#39;; data.Nv.value=&#39;7.72E18&#39;; data.Eg.value=&#39;1.519-5.41E-4*T*T/(T+204)&#39;; plot();"></td></tr>
+
+<tr><td style="background-color:cccccc"><p style="text-align:right"><i>N<sub>v</sub></i>(300 K) = </p></td><td style="background-color:cccccc"><input type="text" name="Nv" value="9.84E18"></td><td style="background-color:cccccc">1/cm³</td></tr>
+<tr><td style="background-color:cccccc; border-bottom:black solid 1px;"><p style="text-align:right"><i>E<sub>g</sub></i> = </p></td><td style="background-color:cccccc; border-bottom:black solid 1px;"><input type="text" name="Eg" value="1.166-4.73E-4*T*T/(T+636)" size="25"></td><td style="background-color:cccccc; border-bottom:black solid 1px;">eV</td></tr>
+
+<tr><td style="background-color:cccccc"><p style="text-align:right"><i>N<sub>d</sub></i> = </p></td><td style="background-color:cccccc"><input type="text" name="Nd" value="1E15"></td><td style="background-color:cccccc">1/cm³</td><td rowspan="2">&nbsp;Donor<br><input type="button" value="P in Si" onclick="data.Ed.value=&#39;0.045&#39;; plot();"><input type="button" value="P in Ge" onclick="data.Ed.value=&#39;0.012&#39;; plot();"><input type="button" value="Si in GaAs" onclick="data.Ea.value=&#39;0.005.8&#39;; plot();"></td></tr>
+<tr><td style="background-color:cccccc; border-bottom:black solid 1px;"><p style="text-align:right"><i>E<sub>c</sub> - E<sub>d</sub></i> = </p></td><td style="background-color:cccccc; border-bottom:black solid 1px;"><input type="text" name="Ed" value="0.045"></td><td style="background-color:cccccc; border-bottom:black solid 1px;">eV</td></tr>
+
+<tr><td style="background-color:cccccc"><p style="text-align:right"><i>N<sub>a</sub></i> = </p></td><td style="background-color:cccccc"><input type="text" name="Na" value="1E16"></td><td style="background-color:cccccc">1/cm³</td><td rowspan="2">&nbsp;Acceptor<br><input type="button" value="B in Si" onclick="data.Ea.value=&#39;0.045&#39;; plot();"><input type="button" value="B in Ge" onclick="data.Ea.value=&#39;0.010&#39;; plot();"><input type="button" value="Si in GaAs" onclick="data.Ea.value=&#39;0.035&#39;; plot();"></td></tr>
+<tr><td style="background-color:cccccc; border-bottom:black solid 1px;"><p style="text-align:right"><i>E<sub>a</sub></i> - E<sub>v</sub> = </p></td><td style="background-color:cccccc; border-bottom:black solid 1px;"><input type="text" name="Ea" value="0.045"></td><td style="background-color:cccccc; border-bottom:black solid 1px;">eV</td></tr>
+
+
+<tr><td style="background-color:cccccc"><p style="text-align:right"><i>T</i><sub>1</sub> = </p></td><td style="background-color:cccccc"><input type="text" name="T1" value="50"></td><td style="background-color:cccccc">K</td></tr>
+<tr><td style="background-color:cccccc"><p style="text-align:right"><i>T</i><sub>2</sub> = </p></td><td style="background-color:cccccc"><input type="text" name="T2" value="500"></td><td style="background-color:cccccc">K</td></tr>
+<tr><td style="background-color:cccccc" colspan="3"><p style="text-align:center"><input type="button" onclick="plot()" value="Replot"></p></td></tr>
+</tbody></table>
+</form>
+
+</td></tr>
+
+<tr><td>
+
+<table><tbody><tr><td><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-146" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-147" class="mjx-mrow"><span id="MJXc-Node-148" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-149" class="mjx-mi"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.56em;">log</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.377em; padding-right: 0.071em;"><span id="MJXc-Node-150" class="mjx-texatom" style=""><span id="MJXc-Node-151" class="mjx-mrow"><span id="MJXc-Node-152" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.374em; padding-bottom: 0.374em;">10</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>log</mi><mrow class="MJX-TeXAtom-ORD"><mn>10</mn></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-6">\log_{10}</script> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-7-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-153" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-154" class="mjx-mrow"><span id="MJXc-Node-155" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span><span id="MJXc-Node-156" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.183em; padding-bottom: 0.56em;">,</span></span><span id="MJXc-Node-157" class="mjx-mi MJXc-space1"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">p</span></span><span id="MJXc-Node-158" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.183em; padding-bottom: 0.56em;">,</span></span><span id="MJXc-Node-159" class="mjx-msubsup MJXc-space1"><span class="mjx-base"><span id="MJXc-Node-160" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-161" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>,</mo><mi>p</mi><mo>,</mo><msub><mi>n</mi><mi>i</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-7">n,p,n_i</script>&nbsp;<br>[cm<sup>-3</sup>]</td><td><div id="placeholder2" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 68px; text-align: center;">200</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 145px; text-align: center;">400</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 222px; text-align: center;">600</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 299px; text-align: center;">800</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 66px; top: 282px; left: 373px; text-align: center;">500</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 8px; text-align: right;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 215px; left: 2px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 161px; left: 2px; text-align: right;">12</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 2px; text-align: right;">14</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 2px; text-align: right;">16</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 2px; text-align: right;">18</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="legend"><div style="position: absolute; width: 38px; height: 64px; top: 13px; right: 19px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">n</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 255);overflow:hidden"></div></div></td><td class="legendLabel">p</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">n<sub>i</sub></td></tr></tbody></table></div></div></td></tr>
+<tr><td></td><td><p style="text-align:center"><i>T</i> [K]</p></td></tr></tbody></table>
+
+</td><td>
+
+<table><tbody><tr><td><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-8-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-162" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-163" class="mjx-mrow"><span id="MJXc-Node-164" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-165" class="mjx-mi"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.56em;">log</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.377em; padding-right: 0.071em;"><span id="MJXc-Node-166" class="mjx-texatom" style=""><span id="MJXc-Node-167" class="mjx-mrow"><span id="MJXc-Node-168" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.374em; padding-bottom: 0.374em;">10</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>log</mi><mrow class="MJX-TeXAtom-ORD"><mn>10</mn></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-8">\log_{10}</script> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-9-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-169" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-170" class="mjx-mrow"><span id="MJXc-Node-171" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span><span id="MJXc-Node-172" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.183em; padding-bottom: 0.56em;">,</span></span><span id="MJXc-Node-173" class="mjx-mi MJXc-space1"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">p</span></span><span id="MJXc-Node-174" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.183em; padding-bottom: 0.56em;">,</span></span><span id="MJXc-Node-175" class="mjx-msubsup MJXc-space1"><span class="mjx-base"><span id="MJXc-Node-176" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-177" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>,</mo><mi>p</mi><mo>,</mo><msub><mi>n</mi><mi>i</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-9">n,p,n_i</script>&nbsp;<br>[cm<sup>-3</sup>]</td><td><div id="placeholder3" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 80px; top: 282px; left: 82px; text-align: center;">0.005</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 80px; top: 282px; left: 178px; text-align: center;">0.010</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 80px; top: 282px; left: 274px; text-align: center;">0.015</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 80px; top: 282px; left: 370px; text-align: center;">0.020</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 8px; text-align: right;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 215px; left: 2px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 161px; left: 2px; text-align: right;">12</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 2px; text-align: right;">14</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 2px; text-align: right;">16</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 2px; text-align: right;">18</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="legend"><div style="position: absolute; width: 38px; height: 64px; top: 13px; right: 20px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:20px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">n</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 255);overflow:hidden"></div></div></td><td class="legendLabel">p</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel">n<sub>i</sub></td></tr></tbody></table></div></div></td></tr>
+<tr><td></td><td><p style="text-align:center">1/<i>T</i> [K<sup>-1</sup>]</p></td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<hr>
+
+<script>
+plot();
+</script>
+
+
+</div>
+   <!--simulation end -->
+   
+
+    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div><!--Last and fifth container under body tag end-->
+
+  
+	 
+</body><!--body tag end-->
+</html><!--html tag end-->
