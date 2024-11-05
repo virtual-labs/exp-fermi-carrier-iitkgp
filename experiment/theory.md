@@ -16,7 +16,7 @@ $$ n\_i = \\sqrt{N\_c \\cdot N\_v} \\cdot \\exp\\left(-\\frac{E\_g}{2k\_B T}\\ri
 Here, \\( N\_c \\) is the effective density of states in the conduction band, \\( N\_v \\) is the effective density of states in the valence band, \\( E\_g \\) is the energy band gap of the semiconductor, \\( k\_B \\) is the Boltzmann constant, and \\( T \\) is the absolute temperature in Kelvin.
 
 The intrinsic carrier concentration increases with temperature, as thermal energy excites more electrons from the valence band to the conduction band. This relationship is exponential, indicating that even a small increase in temperature can significantly increase the number of free carriers.
-<div style="text-align: center;">
+<div align="center">
     <img src="images/icc.png" alt="Semiconductor intrinsic carrier concentration versus temperature">
     <p><strong>Fig. 1. Semiconductor intrinsic carrier concentration versus temperature</strong></p>
 </div>
@@ -32,7 +32,7 @@ Extrinsic Carrier Concentration
 -------------------------------
 
 When a semiconductor is doped with impurities, it becomes extrinsic, meaning its electrical properties are dominated by the added dopants. Doping introduces additional energy levels within the band gap, which can donate or accept electrons, thereby increasing the carrier concentration.
-<div style="text-align: center;">
+<div align="center">
 <img src="images/ecc.jpg"  />
  <p><strong>Fig. 2. Effect of temperature on extrinsic semiconductors</strong></p>
 </div>
@@ -43,7 +43,7 @@ When a semiconductor is doped with impurities, it becomes extrinsic, meaning its
 
 Extrinsic Carrier Concentration
 -------------------------------
-<div style="text-align: center;">
+<div align="center">
 <img src="images/ecc.png"  />
  <p><strong>Fig. 3. Behaviour of the Fermi Energy</strong></p>
 </div>
