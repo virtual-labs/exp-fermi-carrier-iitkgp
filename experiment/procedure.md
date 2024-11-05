@@ -8,10 +8,12 @@
     *   Data acquisition system
     *   Graphing software
     *   Protective equipment (gloves, safety glasses)
-<img src="images/FRB.png"  />
  
-  
-**Fig. 1. The calculated defect formation energy of Mg substitution for Ga as a function of Fermi energy**
+  <div style="text-align: center;">
+    <img src="images/FRB.png" alt="Semiconductor intrinsic carrier concentration versus temperature">
+    <p><strong>Fig. 1. The calculated defect formation energy of Mg substitution for Ga as a function of Fermi energy</strong></p>
+</div>
+
 
   
 
@@ -23,10 +25,11 @@
 
 Procedure
 ---------
+<div style="text-align: center;">
 <img src="images/FRB2.png"  />
-
+<p><strong>Fig. 2. Transport properties and doping evolution of the Fermi surface in cuprates</strong></p>
+</div>
   
-**Fig. 2. Transport properties and doping evolution of the Fermi surface in cuprates**
 
   
 
