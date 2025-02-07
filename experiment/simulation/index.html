@@ -156,15 +156,15 @@ else {
 
 }
 
-    var data1 = [{ data: d1, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "Ec" },{ data: d2, color: "rgb(255, 200, 200)", shadowSize:0, lines: {show:true}, label: "Ed"},{ data: d3, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "Ef"},{ data: d4, color: "rgb(200, 200, 255)", shadowSize:0, lines: {show:true}, label: "Ea"},{ data: d5, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "Ev"}];
+    var data1 = [{ data: d1, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "Ec" },{ data: d2, color: "rgb(255, 128, 0)", shadowSize:0, lines: {show:true}, label: "Ed"},{ data: d3, color: "rgb(255, 0, 64)", shadowSize:0, lines: {show:true}, label: "Ef"},{ data: d4, color: "rgb(64, 255, 0)", shadowSize:0, lines: {show:true}, label: "Ea"},{ data: d5, color: "rgb(191, 0, 255)", shadowSize:0, lines: {show:true}, label: "Ev"}];
 
     $.plot($("#placeholder"), data1);
 
-    var data2 = [{ data: d6, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d7, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d10, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
+    var data2 = [{ data: d6, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d7, color: "rgb(255, 128, 0)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d10, color: "rgb(255, 0, 64)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
 
     $.plot($("#placeholder2"), data2, { yaxis:{ min:8, max: 18}});
 
-    var data3 = [{ data: d8, color: "rgb(255, 0, 0)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d9, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d11, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
+    var data3 = [{ data: d8, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "n" },{ data: d9, color: "rgb(255, 128, 0)", shadowSize:0, lines: {show:true}, label: "p"},{ data: d11, color: "rgb(255, 0, 64)", shadowSize:0, lines: {show:true}, label: "n<sub>i</sub>"}];
 
     $.plot($("#placeholder3"), data3, { yaxis:{ min:8, max: 18}});
 
@@ -178,6 +178,118 @@ else {
 #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
 </style>
   
+
+
+<!-- Additional style -->
+
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+   
+    th, td {
+        padding: 4px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    input[type="text"], input[type="button"] {
+        padding: 4px;
+        margin: 2px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    input[type="button"] {
+        background-color: #5c67f2;
+        color: white;
+        cursor: pointer;
+    }
+    input[type="button"]:hover {
+        background-color: #4a54e1;
+    }
+    .graph {
+        background-color: #e9e9e9;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .legend {
+        background-color: rgba(116, 192, 211, 0.9);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+
+
+
+
+
+
+
+    #placeholder {
+        width: 400px;
+        height: 300px;
+        position: relative;
+    }
+    .flot-base, .flot-overlay {
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        top: 0;
+        left: 0;
+    }
+    .flot-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: smaller;
+        color: rgb(84, 84, 84);
+    }
+    .flot-x-axis, .flot-y-axis {
+        position: absolute;
+        display: block;
+    }
+    .flot-tick-label {
+        position: absolute;
+        font-size: smaller;
+    }
+    .legend {
+        position: absolute;
+        top: 13px;
+        right: 19px;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    .legend table {
+        font-size: smaller;
+        color: #545454;
+    }
+    .legendColorBox div {
+        border: 1px solid #ccc;
+        padding: 1px;
+    }
+    .legendColorBox div div {
+        width: 4px;
+        height: 0;
+        border-width: 5px;
+        overflow: hidden;
+    }
+
+
+</style>
+
+
+
+
   
 </head>
 <body><div id="MathJax_Message" style="display: none;"></div><!--body tag start-->
@@ -193,58 +305,57 @@ else {
 					<ol>
 					
 			<!-- Instructions -->
-			
-			 <div class="container">
+			<div class="container">
         
         
-        <div class="steps">
-         
-		 
-    <p>This simulation allows you to analyze the temperature dependence of carrier concentration and energy levels in a semiconductor. Follow the steps below to use the tool effectively:</p>
-
-    <h4 class="section-title"> Choose Semiconductor Material</h4>
-    <p>Select the type of semiconductor material (Si, Ge, or GaAs) by clicking the corresponding button under the "Semiconductor" section.</p>
-
-    <h4 class="section-title"> Input Semiconductor Parameters</h4>
-    <p>Fill in the required parameters in the provided fields:</p>
-    <ul>
-        <li><strong>N<sub>C</sub>(300 K) and N<sub>V</sub>(300 K):</strong> Enter the effective density of states for the conduction band (N<sub>C</sub>) and the valence band (N<sub>V</sub>) at 300 K in units of 1/cm<sup>3</sup>.</li>
-        <li><strong>E<sub>g</sub>:</strong> Enter the energy band gap (E<sub>g</sub>) as a function of temperature. This is usually given as a temperature-dependent equation.</li>
-        <li><strong>N<sub>d</sub>:</strong> Specify the donor concentration (N<sub>d</sub>) in units of 1/cm<sup>3</sup>.</li>
-        <li><strong>E<sub>C</sub> - E<sub>d</sub>:</strong> Input the energy difference between the conduction band edge (E<sub>C</sub>) and donor level (E<sub>d</sub>) in eV.</li>
-        <li><strong>N<sub>a</sub>:</strong> Specify the acceptor concentration (N<sub>a</sub>) in units of 1/cm<sup>3</sup>.</li>
-        <li><strong>E<sub>a</sub> - E<sub>V</sub>:</strong> Enter the energy difference between the acceptor level (E<sub>a</sub>) and the valence band edge (E<sub>V</sub>) in eV.</li>
-    </ul>
-
-    <h4 class="section-title"> Select Donor and Acceptor Doping</h4>
-    <p>Choose the type of donor and acceptor impurities for the semiconductor by clicking the respective buttons.</p>
-
-    <h4 class="section-title"> Set Temperature Range</h4>
-    <p>Specify the minimum (T<sub>1</sub>) and maximum (T<sub>2</sub>) temperatures in Kelvin (K) for the simulation.</p>
-
-    <h4 class="section-title"> Run Simulation</h4>
-    <p>Once all parameters are set, click the "Replot" button to generate the plots.</p>
-
-    <h4 class="section-title"> Interpreting the Plots</h4>
-    <ul>
-        <li><strong>Top Left Plot (Energy Levels vs Temperature):</strong> This plot shows the variation of energy levels (conduction band E<sub>C</sub>, donor level E<sub>d</sub>, Fermi level E<sub>f</sub>, acceptor level E<sub>a</sub>, and valence band E<sub>V</sub>) as a function of temperature.</li>
-        <li><strong>Bottom Left Plot (Carrier Concentrations vs Temperature):</strong> This plot displays the logarithm (base 10) of carrier concentrations n (electron concentration), p (hole concentration), and n<sub>i</sub> (intrinsic carrier concentration) as a function of temperature.</li>
-        <li><strong>Bottom Right Plot (Carrier Concentrations vs 1/Temperature):</strong> This plot shows the logarithm (base 10) of carrier concentrations as a function of 1/T, which is useful for understanding the temperature dependence of carrier concentrations.</li>
-    </ul>
-
-    <h4 class="section-title"> Adjust Parameters and Replot</h4>
-    <p>You can adjust any of the input parameters and click "Replot" to see how the changes affect the results.</p>
-
-    <p>This simulation helps in understanding the behavior of semiconductors under different doping conditions and temperature ranges.</p>
-
-
-    
-   
-
-        </div>
-    </div>
-			
-			
+                <div class="steps">
+                 
+                 
+            <p>This simulation allows you to analyze the temperature dependence of carrier concentration and energy levels in a semiconductor. Follow the steps below to use the tool effectively:</p>
+        
+            <h4 class="section-title"> Choose Semiconductor Material</h4>
+            <p>Select the type of semiconductor material (Si, Ge, or GaAs) by clicking the corresponding button under the "Semiconductor" section.</p>
+        
+            <h4 class="section-title"> Input Semiconductor Parameters</h4>
+            <p>Fill in the required parameters in the provided fields:</p>
+            <ul>
+                <li><strong>N<sub>C</sub>(300 K) and N<sub>V</sub>(300 K):</strong> Enter the effective density of states for the conduction band (N<sub>C</sub>) and the valence band (N<sub>V</sub>) at 300 K in units of 1/cm<sup>3</sup>.</li>
+                <li><strong>E<sub>g</sub>:</strong> Enter the energy band gap (E<sub>g</sub>) as a function of temperature. This is usually given as a temperature-dependent equation.</li>
+                <li><strong>N<sub>d</sub>:</strong> Specify the donor concentration (N<sub>d</sub>) in units of 1/cm<sup>3</sup>.</li>
+                <li><strong>E<sub>C</sub> - E<sub>d</sub>:</strong> Input the energy difference between the conduction band edge (E<sub>C</sub>) and donor level (E<sub>d</sub>) in eV.</li>
+                <li><strong>N<sub>a</sub>:</strong> Specify the acceptor concentration (N<sub>a</sub>) in units of 1/cm<sup>3</sup>.</li>
+                <li><strong>E<sub>a</sub> - E<sub>V</sub>:</strong> Enter the energy difference between the acceptor level (E<sub>a</sub>) and the valence band edge (E<sub>V</sub>) in eV.</li>
+            </ul>
+        
+            <h4 class="section-title"> Select Donor and Acceptor Doping</h4>
+            <p>Choose the type of donor and acceptor impurities for the semiconductor by clicking the respective buttons.</p>
+        
+            <h4 class="section-title"> Set Temperature Range</h4>
+            <p>Specify the minimum (T<sub>1</sub>) and maximum (T<sub>2</sub>) temperatures in Kelvin (K) for the simulation.</p>
+        
+            <h4 class="section-title"> Run Simulation</h4>
+            <p>Once all parameters are set, click the "Replot" button to generate the plots.</p>
+        
+            <h4 class="section-title"> Interpreting the Plots</h4>
+            <ul>
+                <li><strong>Top Left Plot (Energy Levels vs Temperature):</strong> This plot shows the variation of energy levels (conduction band E<sub>C</sub>, donor level E<sub>d</sub>, Fermi level E<sub>f</sub>, acceptor level E<sub>a</sub>, and valence band E<sub>V</sub>) as a function of temperature.</li>
+                <li><strong>Bottom Left Plot (Carrier Concentrations vs Temperature):</strong> This plot displays the logarithm (base 10) of carrier concentrations n (electron concentration), p (hole concentration), and n<sub>i</sub> (intrinsic carrier concentration) as a function of temperature.</li>
+                <li><strong>Bottom Right Plot (Carrier Concentrations vs 1/Temperature):</strong> This plot shows the logarithm (base 10) of carrier concentrations as a function of 1/T, which is useful for understanding the temperature dependence of carrier concentrations.</li>
+            </ul>
+        
+            <h4 class="section-title"> Adjust Parameters and Replot</h4>
+            <p>You can adjust any of the input parameters and click "Replot" to see how the changes affect the results.</p>
+        
+            <p>This simulation helps in understanding the behavior of semiconductors under different doping conditions and temperature ranges.</p>
+        
+        
+            
+           
+        
+                </div>
+            </div>
+        
+			 
 <!-- end instruction   -->
 					<br><br>
 					</ol>
@@ -274,70 +385,36 @@ else {
 <tr>
     <td><i>E<sub>F</sub></i>&nbsp;[eV]</td>
     <td>
-        <div id="placeholder" style="width: 400px; height: 300px; position: relative;">
-            <canvas class="flot-base" width="400" height="300" style="position: absolute; inset: 0;"></canvas>
-            <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
-                <div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 80px;">200</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 154px;">400</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 228px;">600</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 302px;">800</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 373px;">1000</div>
+        <div id="placeholder">
+            <canvas class="flot-base"></canvas>
+            <div class="flot-text">
+                <div class="flot-x-axis">
+                    <div class="flot-tick-label" style="left: 80px;">200</div>
+                    <div class="flot-tick-label" style="left: 154px;">400</div>
+                    <div class="flot-tick-label" style="left: 228px;">600</div>
+                    <div class="flot-tick-label" style="left: 302px;">800</div>
+                    <div class="flot-tick-label" style="left: 373px;">1000</div>
                 </div>
-                <div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 2px; text-align: right;">-0.75</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 224px; left: 2px; text-align: right;">-0.50</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 179px; left: 2px; text-align: right;">-0.25</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 7px; text-align: right;">0.00</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 90px; left: 7px; text-align: right;">0.25</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 45px; left: 7px; text-align: right;">0.50</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 7px; text-align: right;">0.75</div>
+                <div class="flot-y-axis">
+                    <div class="flot-tick-label" style="top: 269px; left: 2px; text-align: right;">-0.75</div>
+                    <div class="flot-tick-label" style="top: 224px; left: 2px; text-align: right;">-0.50</div>
+                    <div class="flot-tick-label" style="top: 179px; left: 2px; text-align: right;">-0.25</div>
+                    <div class="flot-tick-label" style="top: 135px; left: 7px; text-align: right;">0.00</div>
+                    <div class="flot-tick-label" style="top: 90px; left: 7px; text-align: right;">0.25</div>
+                    <div class="flot-tick-label" style="top: 45px; left: 7px; text-align: right;">0.50</div>
+                    <div class="flot-tick-label" style="top: 0px; left: 7px; text-align: right;">0.75</div>
                 </div>
             </div>
-            <canvas class="flot-overlay" width="400" height="300" style="position: absolute; inset: 0;"></canvas>
-            <div class="legend" style="position: absolute; top: 13px; right: 19px; background-color: rgba(255, 255, 255, 0.85);">
-                <table style="font-size: smaller; color: #545454;">
+            <canvas class="flot-overlay"></canvas>
+            
+            <div class="legend">
+                <table>
                     <tbody>
-                        <tr>
-                            <td class="legendColorBox">
-                                <div style="border: 1px solid #ccc; padding: 1px;">
-                                    <div style="width: 4px; height: 0; border: 5px solid rgb(255, 0, 0); overflow: hidden;"></div>
-                                </div>
-                            </td>
-                            <td class="legendLabel">Ec</td>
-                        </tr>
-                        <tr>
-                            <td class="legendColorBox">
-                                <div style="border: 1px solid #ccc; padding: 1px;">
-                                    <div style="width: 4px; height: 0; border: 5px solid rgb(255, 200, 200); overflow: hidden;"></div>
-                                </div>
-                            </td>
-                            <td class="legendLabel">Ed</td>
-                        </tr>
-                        <tr>
-                            <td class="legendColorBox">
-                                <div style="border: 1px solid #ccc; padding: 1px;">
-                                    <div style="width: 4px; height: 0; border: 5px solid rgb(0, 0, 0); overflow: hidden;"></div>
-                                </div>
-                            </td>
-                            <td class="legendLabel">Ef</td>
-                        </tr>
-                        <tr>
-                            <td class="legendColorBox">
-                                <div style="border: 1px solid #ccc; padding: 1px;">
-                                    <div style="width: 4px; height: 0; border: 5px solid rgb(200, 200, 255); overflow: hidden;"></div>
-                                </div>
-                            </td>
-                            <td class="legendLabel">Ea</td>
-                        </tr>
-                        <tr>
-                            <td class="legendColorBox">
-                                <div style="border: 1px solid #ccc; padding: 1px;">
-                                    <div style="width: 4px; height: 0; border: 5px solid rgb(0, 0, 255); overflow: hidden;"></div>
-                                </div>
-                            </td>
-                            <td class="legendLabel">Ev</td>
-                        </tr>
+                        <tr><td class="legendColorBox"><div><div style="border-color: rgb(255, 0, 0);"></div></div></td><td class="legendLabel">Ec</td></tr>
+                        <tr><td class="legendColorBox"><div><div style="border-color: rgb(255, 200, 200);"></div></div></td><td class="legendLabel">Ed</td></tr>
+                        <tr><td class="legendColorBox"><div><div style="border-color: rgb(0, 0, 0);"></div></div></td><td class="legendLabel">Ef</td></tr>
+                        <tr><td class="legendColorBox"><div><div style="border-color: rgb(200, 200, 255);"></div></div></td><td class="legendLabel">Ea</td></tr>
+                        <tr><td class="legendColorBox"><div><div style="border-color: rgb(0, 0, 255);"></div></div></td><td class="legendLabel">Ev</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -351,16 +428,16 @@ else {
 <table style="border-collapse:collapse">
 <tbody>
     <tr>
-        <td style="background-color: #cccccc;">
+        <td style="background-color: #eedb9e;">
             <p style="text-align: right;">&nbsp;<i>N<sub>c</sub></i>(300 K) = </p>
         </td>
-        <td style="background-color: #cccccc;">
+        <td style="background-color: #eedb9e;">
             <input type="text" name="Nc" value="2.78E19">
         </td>
-        <td style="background-color: #cccccc;">
+        <td style="background-color: #eedb9e;">
             1/cm³&nbsp;
         </td>
-        <td rowspan="3" style="background-color: #cccccc;">
+        <td rowspan="3" style="background-color: #eedb9e;">
             Semiconductor<br>
             <input type="button" value="Si" onclick="setSemiconductor('2.78E19', '9.84E18', '1.166-4.73E-4*T*T/(T+636)');">
             <input type="button" value="Ge" onclick="setSemiconductor('1.04E19', '6.0E18', '0.7437-4.77E-4*T*T/(T+235)');">
@@ -380,34 +457,34 @@ else {
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #eedb9e;">
         <p style="text-align: right;"><i>N<sub>v</sub></i>(300 K) = </p>
     </td>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #eedb9e;">
         <input type="text" name="Nv" value="9.84E18">
     </td>
-    <td style="background-color: #cccccc;">1/cm³</td>
+    <td style="background-color: #eedb9e;">1/cm³</td>
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #eedb9e; border-bottom: 1px solid black;">
         <p style="text-align: right;"><i>E<sub>g</sub></i> = </p>
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #eedb9e; border-bottom: 1px solid black;">
         <input type="text" name="Eg" value="1.166-4.73E-4*T*T/(T+636)" size="25">
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">eV</td>
+    <td style="background-color: #eedb9e; border-bottom: 1px solid black;">eV</td>
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #e2f5ca;">
         <p style="text-align: right;"><i>N<sub>d</sub></i> = </p>
     </td>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #e2f5ca;">
         <input type="text" name="Nd" value="1E15">
     </td>
-    <td style="background-color: #cccccc;">1/cm³</td>
-    <td rowspan="2" style="background-color: #cccccc;">
+    <td style="background-color: #e2f5ca;">1/cm³</td>
+    <td rowspan="2" style="background-color: #e2f5ca;">
         Donor<br>
         <input type="button" value="P in Si" onclick="data.Ed.value='0.045'; plot();">
         <input type="button" value="P in Ge" onclick="data.Ed.value='0.012'; plot();">
@@ -416,24 +493,24 @@ else {
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #e2f5ca; border-bottom: 1px solid black;">
         <p style="text-align: right;"><i>E<sub>c</sub> - E<sub>d</sub></i> = </p>
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #e2f5ca; border-bottom: 1px solid black;">
         <input type="text" name="Ed" value="0.045">
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">eV</td>
+    <td style="background-color: #e2f5ca; border-bottom: 1px solid black;">eV</td>
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #d6ebf3;">
         <p style="text-align: right;"><i>N<sub>a</sub></i> = </p>
     </td>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #d6ebf3;">
         <input type="text" name="Na" value="1E16">
     </td>
-    <td style="background-color: #cccccc;">1/cm³</td>
-    <td rowspan="2" style="background-color: #cccccc;">
+    <td style="background-color: #d6ebf3;">1/cm³</td>
+    <td rowspan="2" style="background-color: #d6ebf3;">
         Acceptor<br>
         <input type="button" value="B in Si" onclick="data.Ea.value='0.045'; plot();">
         <input type="button" value="B in Ge" onclick="data.Ea.value='0.010'; plot();">
@@ -442,33 +519,33 @@ else {
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #d6ebf3; border-bottom: 1px solid black;">
         <p style="text-align: right;"><i>E<sub>a</sub> - E<sub>v</sub></i> = </p>
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">
+    <td style="background-color: #d6ebf3; border-bottom: 1px solid black;">
         <input type="text" name="Ea" value="0.045">
     </td>
-    <td style="background-color: #cccccc; border-bottom: 1px solid black;">eV</td>
+    <td style="background-color: #d6ebf3; border-bottom: 1px solid black;">eV</td>
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #fab7af;">
         <p style="text-align: right;"><i>T</i><sub>1</sub> = </p>
     </td>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #fab7af;">
         <input type="text" name="T1" value="50">
     </td>
-    <td style="background-color: #cccccc;">K</td>
+    <td style="background-color: #fab7af;">K</td>
 </tr>
 
 <tr>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #fab7af;">
         <p style="text-align: right;"><i>T</i><sub>2</sub> = </p>
     </td>
-    <td style="background-color: #cccccc;">
+    <td style="background-color: #fab7af;">
         <input type="text" name="T2" value="500">
     </td>
-    <td style="background-color: #cccccc;">K</td>
+    <td style="background-color: #fab7af;">K</td>
 </tr>
 
 <tr>
