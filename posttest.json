@@ -1,0 +1,118 @@
+
+  {
+	  "version": 2.0,
+  "questions": [
+    
+  {
+    "question": "1. In an intrinsic semiconductor, what happens to the Fermi energy level as the temperature approaches absolute zero?",
+    "answers": {
+      "a": "It moves closer to the valence band",
+      "b": "It moves closer to the conduction band",
+      "c": "It remains constant",
+      "d": "It becomes undefined"
+    },
+    "correctAnswer": "c",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "2. For an n-type semiconductor, what is the effect of temperature on the position of the Fermi level relative to the conduction band?",
+    "answers": {
+      "a": "It moves further from the conduction band",
+      "b": "It moves closer to the conduction band",
+      "c": "It remains the same",
+      "d": "It oscillates around the conduction band"
+    },
+    "correctAnswer": "b",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "3. How does the carrier concentration in a p-type semiconductor change as temperature increases?",
+    "answers": {
+      "a": "It decreases",
+      "b": "It remains constant",
+      "c": "It increases",
+      "d": "It fluctuates unpredictably"
+    },
+    "correctAnswer": "c",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "4. What impact does increasing temperature have on the majority carrier concentration in an n-type semiconductor?",
+    "answers": {
+      "a": "It decreases",
+      "b": "It increases",
+      "c": "It remains unchanged",
+      "d": "It becomes zero"
+    },
+    "correctAnswer": "b",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "5. In a semiconductor, how does the intrinsic carrier concentration relate to the band gap as temperature changes?",
+    "answers": {
+      "a": "It decreases with increasing band gap",
+      "b": "It increases with decreasing band gap",
+      "c": "It decreases with decreasing band gap",
+      "d": "It is unaffected by the band gap"
+    },
+    "correctAnswer": "b",
+    "difficulty": "advanced"
+  },
+  {
+    "question": "6. How does the temperature affect the density of states in the conduction band of a semiconductor?",
+    "answers": {
+      "a": "It increases linearly",
+      "b": "It remains constant",
+      "c": "It increases exponentially",
+      "d": "It decreases exponentially"
+    },
+    "correctAnswer": "c",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "7. What is the behavior of the Fermi level in a heavily doped p-type semiconductor with increasing temperature?",
+    "answers": {
+      "a": "It moves towards the valence band",
+      "b": "It moves away from the valence band",
+      "c": "It remains unchanged",
+      "d": "It moves towards the conduction band"
+    },
+    "correctAnswer": "b",
+    "difficulty": "advanced"
+  },
+  {
+    "question": "8. What happens to the hole concentration in a p-type semiconductor with a rise in temperature?",
+    "answers": {
+      "a": "It decreases",
+      "b": "It remains constant",
+      "c": "It increases",
+      "d": "It becomes zero"
+    },
+    "correctAnswer": "c",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "9. How does the effective mass of electrons in a semiconductor vary with temperature?",
+    "answers": {
+      "a": "It increases with temperature",
+      "b": "It decreases with temperature",
+      "c": "It remains constant",
+      "d": "It fluctuates with temperature"
+    },
+    "correctAnswer": "b",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "10. In a semiconductor, how does the change in Fermi energy level with temperature affect the electrical conductivity?",
+    "answers": {
+      "a": "Conductivity decreases as Fermi level shifts",
+      "b": "Conductivity increases as Fermi level shifts",
+      "c": "Conductivity remains constant",
+      "d": "Conductivity fluctuates unpredictably"
+    },
+    "correctAnswer": "b",
+    "difficulty": "advanced"
+  }
+
+  ]
+}

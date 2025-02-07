@@ -1,0 +1,2 @@
+## Aim of experiment
+The objective of this experiment is to analyze and understand how the Fermi energy level and carrier concentration in a semiconductor material vary with temperature. By examining these variations, we aim to explore the relationship between temperature, intrinsic carrier concentration, and the position of the Fermi level in different types of semiconductors, such as intrinsic, n-type, and p-type materials. This will provide insight into the temperature dependence of electrical properties in semiconductors.

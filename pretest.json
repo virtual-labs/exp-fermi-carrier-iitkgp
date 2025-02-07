@@ -1,0 +1,117 @@
+  {
+	  "version": 2.0,
+  "questions": [
+    
+  {
+    "question": "1. How does the Fermi energy level of an intrinsic semiconductor change with increasing temperature?",
+    "answers": {
+      "a": "It increases",
+      "b": "It decreases",
+      "c": "It remains constant",
+      "d": "It initially increases then decreases"
+    },
+    "correctAnswer": "b",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "2. What happens to the carrier concentration in an intrinsic semiconductor as the temperature rises?",
+    "answers": {
+      "a": "It decreases",
+      "b": "It remains constant",
+      "c": "It increases",
+      "d": "It first decreases, then increases"
+    },
+    "correctAnswer": "c",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "3. In an n-type semiconductor, what effect does increasing temperature have on the Fermi energy level?",
+    "answers": {
+      "a": "It moves closer to the conduction band",
+      "b": "It moves closer to the valence band",
+      "c": "It remains unchanged",
+      "d": "It moves away from the conduction band"
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "4. How does the Fermi energy level of a p-type semiconductor shift with increasing temperature?",
+    "answers": {
+      "a": "It moves closer to the conduction band",
+      "b": "It moves closer to the valence band",
+      "c": "It remains constant",
+      "d": "It moves away from the valence band"
+    },
+    "correctAnswer": "d",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "5. Which factor primarily controls the variation of carrier concentration with temperature in a semiconductor?",
+    "answers": {
+      "a": "Band gap energy",
+      "b": "Fermi level position",
+      "c": "Dielectric constant",
+      "d": "Magnetic field strength"
+    },
+    "correctAnswer": "a",
+    "difficulty": "beginner"
+  },
+  {
+    "question": "6. At very high temperatures, how does the carrier concentration in an intrinsic semiconductor behave?",
+    "answers": {
+      "a": "It saturates",
+      "b": "It increases exponentially",
+      "c": "It decreases exponentially",
+      "d": "It remains constant"
+    },
+    "correctAnswer": "b",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "7. What is the relationship between the Fermi energy level and carrier concentration in an n-type semiconductor as temperature increases?",
+    "answers": {
+      "a": "Carrier concentration increases and Fermi level moves closer to conduction band",
+      "b": "Carrier concentration decreases and Fermi level moves closer to conduction band",
+      "c": "Carrier concentration remains constant and Fermi level moves away from conduction band",
+      "d": "Carrier concentration decreases and Fermi level moves closer to valence band"
+    },
+    "correctAnswer": "a",
+    "difficulty": "advanced"
+  },
+  {
+    "question": "8. How does the Fermi energy level in a p-type semiconductor compare to the intrinsic Fermi level at high temperatures?",
+    "answers": {
+      "a": "It is closer to the valence band",
+      "b": "It is closer to the conduction band",
+      "c": "It is at the same position",
+      "d": "It moves away from both bands"
+    },
+    "correctAnswer": "a",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "9. What is the effect of temperature on the intrinsic carrier concentration in a semiconductor?",
+    "answers": {
+      "a": "It decreases linearly",
+      "b": "It increases linearly",
+      "c": "It increases exponentially",
+      "d": "It remains unchanged"
+    },
+    "correctAnswer": "c",
+    "difficulty": "intermediate"
+  },
+  {
+    "question": "10. In a degenerate semiconductor, how does increasing temperature influence the carrier concentration?",
+    "answers": {
+      "a": "It remains constant",
+      "b": "It increases significantly",
+      "c": "It decreases",
+      "d": "It decreases initially then increases"
+    },
+    "correctAnswer": "b",
+    "difficulty": "advanced"
+  }
+
+  ]
+}
